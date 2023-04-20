@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>May tinh co ban</title>
+    <link rel="stylesheet" type="text/css" href="maytinh.css">
+</head>
+
+<body>
+    <div class="nhap">
+        <h2>Input 1</h2>
+        <input id="b" type="text" placeholder="Nhập số đầu tiên">
+        <h2> Input 2</h2>
+        <input id="c" type="text" placeholder="Nhập số thứ hai">
+        <p>aaaaaaa</p>
+    </div>
+    <br>
+    <select id="a">
+        <option value="cong" selected>+</option>
+        <option value="tru">-</option>
+        <option value="nhan">*</option>
+        <option value="chia">/</option>
+    </select>
+        <div class="xemkq">
+            <br>
+            <button onclick="ketqua()">Xem ket qua </button>
+        </div>
+
+        <p id="Xem"></p>
+        <script>
+            function ketqua(){
+                const so1 = document.getElementById('b').value;
+                const so2 = document.getElementById('c').value;
+                const dau = document.getElementById('a').value
+                let kqa = 0;
+
+                if(dau=='cong'){
+                    kqa = parseFloat(so1) + parseFloat(so2);
+                }
+                else if(dau=='tru'){
+                    kqa = parseFloat(so1) - parseFloat(so2);
+                }        
+                else if(dau=='nhan'){
+                    kqa = parseFloat(so1) * parseFloat(so2);
+                }
+                else{
+                    kqa = parseFloat(so1) / parseFloat(so2);
+                }
+                
+                document.getElementById('Xem').innerHTML = kqa
+            }
+        </script>
+</body>
+
+</html>
